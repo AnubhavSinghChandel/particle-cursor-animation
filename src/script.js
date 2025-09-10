@@ -101,7 +101,10 @@ const loadTexture = async (textureRoute) => {
     return texture
 }
 
-// all this BS because of the async crap
+// This WILL NOT BUILD if building with VITE
+// because old browsers don't support top level await calls 
+// check vite config for fix.
+// all this BS for the async crap
 const loadedTexture = await loadTexture(textures[0])
 const loadedTextureProps = {}
 if (loadedTexture) {
